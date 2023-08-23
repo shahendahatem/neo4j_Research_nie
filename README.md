@@ -60,6 +60,15 @@ docker stop testneo4j
 docker rm testneo4j
 ```
 
+
+/etc/neo4j/neo4j.conf
+dbms.memory.transaction.total.max=0
+
+sudo -u root neo4j start
+sudo -u root neo4j stop
+
+
+
 ## References
 - Neo4j: https://neo4j.com/
 - Graph4Code: https://github.com/wala/graph4code
