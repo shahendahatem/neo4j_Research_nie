@@ -47,7 +47,9 @@ Now that the data is imported, you can explore it using Cypher queries. For exam
 
 ```cypher
 MATCH (s)-[p]->(o)
-RETURN s, p, o;
+RETURN s, p, o
+LIMIT 200;
+
 ```
 
 Feel free to modify and execute other Cypher queries to analyze the data based on your research requirements.
