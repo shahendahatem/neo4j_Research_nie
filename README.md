@@ -65,12 +65,22 @@ docker rm testneo4j
 dbms.memory.transaction.total.max=0
 
 sudo -u root neo4j start
+
 sudo -u root neo4j stop
+
+CALL n10s.rdf.import.fetch(
+  'file:///home/nu1/Desktop/1t%20Hard%20drive/shahenda/graph4code-master/scripts/stackoverflow_triples_3.nq',
+  'N-Quads',
+  {
+    singleTx: false
+  }
+);
 
 
 
 ## References
 - Neo4j: https://neo4j.com/
+- 
 - Graph4Code: https://github.com/wala/graph4code
 
 ## License
