@@ -81,7 +81,62 @@ CALL n10s.rdf.import.fetch(
 
 ## References
 - Neo4j: https://neo4j.com/
-- 
+
+Certainly! Here's the updated text with the additional instruction for importing data from a local file using the `n10s` plugin:
+
+```markdown
+## Switching Databases
+When switching between databases, follow these steps:
+
+1. Stop the current Neo4j instance:
+   ```bash
+   sudo -u root neo4j stop
+   ```
+
+2. Edit the Neo4j configuration file using the command:
+   ```bash
+   kate /etc/neo4j/neo4j.conf
+   ```
+
+3. Search for the line that reads `initial.dbms.default_database=DocString`. Change the database name to the desired one.
+
+4. Save and close the configuration file.
+
+5. Start the Neo4j instance again:
+   ```bash
+   sudo -u root neo4j start
+   ```
+
+6. Access the Neo4j browser at http://localhost:7474/browser/ to work with the new database.
+
+## Import Data from a Local File
+To import data from a local file into the Neo4j database, you can use the `n10s` plugin. Here's how:
+
+1. Open a web browser and navigate to the Neo4j browser at http://localhost:7474.
+
+2. In the Neo4j browser, execute the following Cypher query to import the data from your local file:
+   ```cypher
+   CALL n10s.rdf.import.fetch(
+     'file:///home/nu1/Desktop/1t%20Hard%20drive/shahenda/graph4code-master/scripts/stackoverflow_triples_3.nq',
+     'N-Quads',
+     {
+       singleTx: false
+     }
+   );
+   ```
+   This query will fetch data from the specified local file in N-Quads format and load it into the database.
+
+Remember to modify the file path in the above query to point to the correct location of your local file.
+
+## References
+- Neo4j: https://neo4j.com/
+- Graph4Code: https://github.com/wala/graph4code
+
+## License
+This research work is provided under the [MIT License](LICENSE).
+```
+
+Feel free to copy and paste this updated Markdown-formatted text into your document or Markdown editor.
 - Graph4Code: https://github.com/wala/graph4code
 
 ## License
