@@ -20,17 +20,7 @@ The next step is to import the sample graph data into the Neo4j database. We'll 
 
 1. Open a web browser and navigate to the Neo4j browser at http://localhost:7474.
 
-2. In the Neo4j browser, execute the following Cypher queries one by one:
-
-   a. Initialize the `n10s` plugin configuration and create a constraint to ensure unique URIs for resources:
-      ```cypher
-      CALL n10s.graphconfig.init();
-      CREATE CONSTRAINT n10s_unique_uri FOR (r:Resource) REQUIRE r.uri IS UNIQUE;
-      ```
-
-   b. Import the sample data from the specified URL (https://raw.githubusercontent.com/wala/graph4code/master/sample_graph/stackoverflow_triples_sample.nq) in N-Quads format:
-      ```cypher
-      CALL n10s.rdf.import.fetch("https://raw.githubusercontent.com/wala/graph4code/master/sample_graph/stackoverflow_triples_sample.nq", "N-Quads", { singleTx: false });
+vse });
       ```
 
 ## Data Deletion
@@ -110,7 +100,16 @@ To import data from a local file into the Neo4j database, you can use the `n10s`
 
 1. Open a web browser and navigate to the Neo4j browser at http://localhost:7474.
 
+
 2. In the Neo4j browser, execute the following Cypher query to import the data from your local file:
+
+   a. Initialize the `n10s` plugin configuration and create a constraint to ensure unique URIs for resources:
+      ```cypher
+      CALL n10s.graphconfig.init();
+      CREATE CONSTRAINT n10s_unique_uri FOR (r:Resource) REQUIRE r.uri IS UNIQUE;
+      ```
+
+   b. Import the sample data 
    ```cypher
    CALL n10s.rdf.import.fetch(
      'file:///home/nu1/Desktop/1t%20Hard%20drive/shahenda/graph4code-master/scripts/stackoverflow_triples_3.nq',
@@ -119,8 +118,7 @@ To import data from a local file into the Neo4j database, you can use the `n10s`
        singleTx: false
      }
    );
-   ```
-   This query will fetch data from the specified local file in N-Quads format and load it into the database.
+      
 
 Remember to modify the file path in the above query to point to the correct location of your local file.
 
@@ -128,12 +126,3 @@ Remember to modify the file path in the above query to point to the correct loca
 - Neo4j: https://neo4j.com/
 - Graph4Code: https://github.com/wala/graph4code
 
-## License
-This research work is provided under the [MIT License](LICENSE).
-```
-
-Feel free to copy and paste this updated Markdown-formatted text into your document or Markdown editor.
-- Graph4Code: https://github.com/wala/graph4code
-
-## License
-This research work is provided under the [MIT License](LICENSE).
