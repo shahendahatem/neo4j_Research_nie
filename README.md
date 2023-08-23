@@ -79,12 +79,8 @@ CALL n10s.rdf.import.fetch(
 
 
 
-## References
-- Neo4j: https://neo4j.com/
 
-Certainly! Here's the updated text with the additional instruction for importing data from a local file using the `n10s` plugin:
 
-```markdown
 ## Switching Databases
 When switching between databases, follow these steps:
 
